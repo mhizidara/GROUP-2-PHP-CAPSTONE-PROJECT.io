@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url("bg-img3.jpg");
+    color:white;
+}
+
+.container{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: rgba(0,0,0,0.2);
+}
+
+h1{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color:white;
+}
+
+form{
+    background-color: rgba(125,125,125,0.4);
+    box-shadow: 4px -2px 7px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px -2px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px -2px 7px 0px rgba(0,0,0,0.75);
+    padding: 3rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+
+#convert{
+    padding:0.2rem;
+    text-transform: uppercase;
+    background-color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+td{
+    padding: 1rem ;
+    border-radius: 0.2rem;
+}
+
+.output{
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
