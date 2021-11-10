@@ -24,10 +24,6 @@ Imperial pint to Cubic foot
 Imperial cup to Imperial pint
 Imperial pint to Imperial cup
 
-PRESSURE:
-Pascal to Bar
-Bar to Pascal
-
 LENGTH:
 Meter to Centimeter
 Centimeter to Meter
@@ -41,10 +37,6 @@ Celsius to Farenheit
 Farenheit to Celsius
 Kelvin to Celsius
 Farenheit to Kelvin
-
-TIME:
-Seconds to Minutes
-Minutes to Seconds
 
 SPEED:
 Meter per seconds to Kilometer per hour
