@@ -82,7 +82,4 @@
             $answer = "Can't convert " . $convertFrom . "s to ";
         }
     }
-        <div class="output">
-            <p>Output : <?php echo $value . ' ' . $convertFrom . '(s) equals'. ' ' .$answer . ' ' . $convertTo.'(s)'?></p>
-        </div>
 ?>
