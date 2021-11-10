@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Lengths Conversions</title>
+        <title>Length Conversions</title>
         <link href="resources/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="index.css">
 
@@ -22,7 +22,7 @@
                 <a class="nav-link" href="index.php">All Conversions</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="lengthconvert.php">Area</a>
+                <a class="nav-link" href="area.php">Area</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="volume.php">Volume</a>
@@ -373,18 +373,19 @@
             }
         ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-        <div class="col-md-5 mt-5 mx-auto">
+    <div class="container">
+    <form class="row g-3 needs-validation" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-        <h1 style="text-align: center; margin-top: -30px; margin-bottom: 20px;">Lengths Conversions</h1>
+        <h1 class="display-6" style="text-align: center; margin-top: 20px; margin-bottom: 20px;"><strong>Length Conversions</strong></h1>
 
-            <div class="mb-3">
+            <div class="col-12">
                 <input type="text" name="cnvFrom" class="form-control" placeholder="Enter a number" />
                 <span class="error"> <?php echo $cnvFromErr; ?></span>
+                <p></p>
             </div>
 
-            <div class="mb-3">
-                <label for="convertFrom" class="form-label">Convert from:</label>
+            <div class="col-md-6">
+                <label for="convertFrom" class="form-label"><h4>Convert from:</h4></label>
                 <select id="convertFrom" name="convertFrom" class="form-select">
                     <option value="" disabled selected>Select a Unit</option>
                     <option value="inch">Inch</option>
@@ -395,10 +396,14 @@
                     <option value="metre">Metre</option>
                     <option value="foot">Foot</option>
                 </select>
+                <div class="invalid-feedback">
+                    Please select a valid unit.
+                </div>
+                <br><br>
             </div>
 
-            <div class="mb-3">
-                <label for="convertTo" class="form-label">Convert to:</label>
+            <div class="col-md-6">
+                <label for="convertTo" class="form-label"><h4>Convert to:</h4></label>
                 <select id="convertTo" name="convertTo" class="form-select">
                     <option value="" disabled selected>Select a Unit</option>
                     <option value="inch">Inch</option>
@@ -409,21 +414,28 @@
                     <option value="metre">Metre</option>
                     <option value="foot">Foot</option>
                 </select>
+                <div class="invalid-feedback">
+                    Please select a valid unit.
+                </div>
             </div>
 
-            <div class="col-md-20">
+            <br><br>
+
+            <div class="col-md-6">
                 <input type="submit" value="Convert" class="btn btn-primary btn-lg btn form-control"/>
-
-                <input type="submit" value="Reset" name="resetBtn" class="btn btn-secondary btn-lg btn form-control" style="margin-top: 20px;"/>
             </div>
+            <div class="col-md-6">
+                <input type="submit" value="Reset" name="resetBtn" class="btn btn-secondary btn-lg btn form-control"/>
+            </div>
+
+            <p></p>
 
             <div id="result" style="margin-top: 20px; background:aqua; text-align:center; font-size:xx-large;">
                 <?php echo $result;?>
             </div>
 
-        </div>
-
         </form>
+    </div>
 
         <script src="resources/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

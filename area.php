@@ -1,22 +1,29 @@
 <?php
+$answer = 0;
+$convertTo = 'unit';
+$convertFrom = 'units';
+$result = $cnvFromErr = "";
 
-require_once('includes/functions.php');
+if (isset($_POST['convertFrom']) && isset($_POST['convertTo'])) {
+    $value = $_POST['value'];
+    $convertFrom = $_POST['convertFrom'];
+    $convertTo = $_POST['convertTo'];
 
-$from_value = '';
-$from_unit = '';
-$to_unit = '';
-$to_value = '';
-
-if(isset($_POST['submit'])) {
-  $from_value = $_POST['from_value'];
-  $from_unit = $_POST['from_unit'];
-  $to_unit = $_POST['to_unit'];
-  
-  //$to_value = convert_area($from_value, $from_unit, $to_unit);
+    if($convertFrom == 'Square meter' AND $convertTo == 'Square kilometer'){
+        $answer = floatval($value) / 10**6;
+    } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Square meter'){
+        $answer = floatval($value) * 10**6;
+    } elseif($convertFrom == 'Hectare' AND $convertTo == 'Acre'){
+        $answer = floatval($value) * 2.471;
+    }  elseif($convertFrom == 'Acre' AND $convertTo == 'Hectare'){
+            $answer = floatval($value) / 2.471;
+    } elseif($convertFrom == 'Square inch' AND $convertTo == 'Square foot'){
+        $answer = floatval($value) / 144;
+    } elseif($convertFrom == 'Square foot' AND $convertTo == 'Square inch'){
+        $answer = floatval($value) * 144;
+    }
+    $result = 'Output: ' . $value . ' ' . $convertFrom . '(s) equals'. ' ' .$answer . ' ' . $convertTo.'(s)';
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +31,9 @@ if(isset($_POST['submit'])) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Area Conversion</title>
 
-	<link href="resources/bootstrap.min.css" rel="stylesheet" >
+    <link href="resources/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="index.css">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -67,32 +74,68 @@ if(isset($_POST['submit'])) {
             </ul>
         </div>
     </nav>
+
+        <style>
+            .error{
+                color: #FF0000;
+            }
+        </style>
 </head>
 
 </head>
 <body>
-	<h1> SQUARE METER TO SQUARE KILOMETER</h1>
-	<form method="post" action="">
-		<label> METER </label>
-		<input type="double" name="Square meter" value=<?php echo "$Kilometer"; ?>>
-		<label> ==========> </label>
-		<input type="double" name="Kilo meter" value=<?php echo "$Squaremeter"; ?>>
-		<label> CENTIMETER </label>
-		<br>
+<div class="container">
+    <form class="row g-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
+    <h1 class="display-6" style="text-align: center; margin-top: 20px; margin-bottom: 20px;"><strong>Area Conversions</strong></h1>
 
+        <div class="col-12">
+            <input type="text" name="value" class="form-control" placeholder="Enter Value" />
+            <span class="error"> <?php echo $cnvFromErr; ?></span>
+            <p></p>
+        </div>
 
+        <div class="col-md-6">
+            <label for="convertFrom" class="form-label"><h4>Convert from:</h4></label>
+            <select id="convertFrom" name="convertFrom" class="form-select">
+                <option value="" disabled selected>Select Unit</option>
+                <option value="Square meter">Square meter</option>
+                <option value="Square kilometer">Square kilometer</option>
+                <option value="Hectare">Hectare</option>
+                <option value="Acre">Acre</option>
+                <option value="Square foot">Square foot</option>
+                <option value="Square inch">Square inch</option>
+            </select>
+            <br><br>
+        </div>
+        
+        <div class="col-md-6">
+            <label for="convertTo" class="form-label"><h4>Convert from:</h4></label>
+            <select id="convertTo" name="convertTo" class="form-select">
+                <option value="" disabled selected>Select Unit</option>
+                <option value="Square meter">Square meter</option>
+                <option value="Square kilometer">Square kilometer</option>
+                <option value="Hectare">Hectare</option>
+                <option value="Acre">Acre</option>
+                <option value="Square foot">Square foot</option>
+                <option value="Square inch">Square inch</option>
+            </select>
+        </div>
 
+        <div class="col-md-6">
+            <input type="submit" value="Convert" class="btn btn-primary btn-lg btn form-control"/>
+        </div>
+        <div class="col-md-6">
+            <input type="submit" value="Reset" name="resetBtn" class="btn btn-secondary btn-lg btn form-control"/>
+        </div>
 
-		<input type="submit" name="" value="Convert">
+        <p></p>
 
+        <div id="result" style="margin-top: 20px; background:aqua; text-align:center; font-size:xx-large;">
+            <?php echo $result;?>
+        </div>
+    </form>
+</div>
 
-?>
-      </form>
-  
-      <br />
-      <a href="index.php">Return to menu</a>
-      
-    </div>
-  </body>
+</body>
 </html>

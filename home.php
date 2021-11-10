@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Measurement Conversions</title>
+    <title>Measurement Converter</title>
     <link href="resources/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="index.css">
 
@@ -50,12 +50,14 @@
 
 <body>
     
-    <div>Side Hustle Capstone Project.
-    This is a measurement converter using PHP and CSS 
-    This is a Web development - Capstone project on buliding a measurement converter, as part of the Side Hustle Internship program. 
-    The project is written in PHP, Bootstrap and CSS only.
-    </div>
-
+<div class="container">
+    <p style="margin-top: -100px;"><strong><h2 class="display-2">Side Hustle Capstone Project</h2></strong></p>
+    
+    <p><h4 class="display-6">This is a measurement converter built using PHP, Bootstrap and CSS.</h4></p>
+    
+    <p><h4 class="display-6">A web development - capstone project on buliding a measurement converter application, as part of the Side Hustle Internship program.</h4></p>
+</div>
+    
     <script src="resources/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="resources/bootstrap.min.js"></script>
