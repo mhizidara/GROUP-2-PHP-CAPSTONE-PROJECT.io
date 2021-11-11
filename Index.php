@@ -151,7 +151,7 @@
     <div class="container">
         <form class="row g-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-        <h1 class="display-6" style="text-align: center; margin-top: 20px; margin-bottom: 20px;"><strong>Measurement Converter App</strong></h1>
+        <h1 class="display-6" style="text-align: center; margin-bottom: 20px;"><strong>Measurement Converter App</strong></h1>
 
             <div class="col-12">
                 <input type="text" name="value" class="form-control" placeholder="Enter Value" />

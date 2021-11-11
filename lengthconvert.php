@@ -387,7 +387,7 @@
             <div class="col-md-6">
                 <label for="convertFrom" class="form-label"><h4>Convert from:</h4></label>
                 <select id="convertFrom" name="convertFrom" class="form-select">
-                    <option value="" disabled selected>Select a Unit</option>
+                    <option value="" disabled selected>Select Unit</option>
                     <option value="inch">Inch</option>
                     <option value="yard">Yard</option>
                     <option value="mile">Mile</option>
@@ -405,7 +405,7 @@
             <div class="col-md-6">
                 <label for="convertTo" class="form-label"><h4>Convert to:</h4></label>
                 <select id="convertTo" name="convertTo" class="form-select">
-                    <option value="" disabled selected>Select a Unit</option>
+                    <option value="" disabled selected>Select Unit</option>
                     <option value="inch">Inch</option>
                     <option value="yard">Yard</option>
                     <option value="mile">Mile</option>

@@ -11,16 +11,64 @@ if (isset($_POST['convertFrom']) && isset($_POST['convertTo'])) {
 
     if($convertFrom == 'Square meter' AND $convertTo == 'Square kilometer'){
         $answer = floatval($value) / 10**6;
+    } elseif($convertFrom == 'Square meter' AND $convertTo == 'Hectare'){
+        $answer = floatval($value) / 10**4;
+    } elseif($convertFrom == 'Square meter' AND $convertTo == 'Acre'){
+        $answer = floatval($value) / 4046.85642;
+    } elseif($convertFrom == 'Square meter' AND $convertTo == 'Square inch'){
+        $answer = floatval($value) * 1550.0031;
+    } elseif($convertFrom == 'Square meter' AND $convertTo == 'Square foot'){
+        $answer = floatval($value) / 10.7639014;
     } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Square meter'){
         $answer = floatval($value) * 10**6;
+    } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Hectare'){
+        $answer = floatval($value) * 100;
+    } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Acre'){
+        $answer = floatval($value) * 247.105381;
+    } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Square inch'){
+        $answer = floatval($value) * (1.55 * 10**9);
+    } elseif($convertFrom == 'Square kilometer' AND $convertTo == 'Square foot'){
+        $answer = floatval($value) * (1.0764 * 10**7);
     } elseif($convertFrom == 'Hectare' AND $convertTo == 'Acre'){
-        $answer = floatval($value) * 2.471;
-    }  elseif($convertFrom == 'Acre' AND $convertTo == 'Hectare'){
-            $answer = floatval($value) / 2.471;
+        $answer = floatval($value) * 2.47105381;
+    } elseif($convertFrom == 'Hectare' AND $convertTo == 'Square kilometer'){
+        $answer = floatval($value) / 100;
+    } elseif($convertFrom == 'Hectare' AND $convertTo == 'Square meter'){
+        $answer = floatval($value) * 10000;
+    } elseif($convertFrom == 'Hectare' AND $convertTo == 'Square inch'){
+        $answer = floatval($value) * (1.55 * 10**7);
+    } elseif($convertFrom == 'Hectare' AND $convertTo == 'Square foot'){
+        $answer = floatval($value) * 107639.104;
+    } elseif($convertFrom == 'Acre' AND $convertTo == 'Hectare'){
+        $answer = floatval($value) / 2.47105381;
+    } elseif($convertFrom == 'Acre' AND $convertTo == 'Square kilometer'){
+        $answer = floatval($value) / 247.105381;
+    } elseif($convertFrom == 'Acre' AND $convertTo == 'Sqaure meter'){
+        $answer = floatval($value) * 4046.85642;
+    } elseif($convertFrom == 'Acre' AND $convertTo == 'Square foot'){
+        $answer = floatval($value) * 43560;
+    } elseif($convertFrom == 'Acre' AND $convertTo == 'Square inch'){
+        $answer = floatval($value) * 6272640;
     } elseif($convertFrom == 'Square inch' AND $convertTo == 'Square foot'){
         $answer = floatval($value) / 144;
+    } elseif($convertFrom == 'Square inch' AND $convertTo == 'Square kilometer'){
+        $answer = floatval($value) / (1.55 * 10**9);
+    } elseif($convertFrom == 'Square inch' AND $convertTo == 'Square meter'){
+        $answer = floatval($value) / 1550.0031;
+    } elseif($convertFrom == 'Square inch' AND $convertTo == 'Hectare'){
+        $answer = floatval($value) / (1.55 * 10**7);
+    } elseif($convertFrom == 'Square inch' AND $convertTo == 'Acre'){
+        $answer = floatval($value) / (6.2726 * 10**6);
     } elseif($convertFrom == 'Square foot' AND $convertTo == 'Square inch'){
         $answer = floatval($value) * 144;
+    } elseif($convertFrom == 'Square foot' AND $convertTo == 'Square kilometer'){
+        $answer = floatval($value) / (1.0764 * 10**7);
+    } elseif($convertFrom == 'Square foot' AND $convertTo == 'Square meter'){
+        $answer = floatval($value) / 10.7639104;
+    } elseif($convertFrom == 'Square foot' AND $convertTo == 'Hectare'){
+        $answer = floatval($value) / 107639.104;
+    } elseif($convertFrom == 'Square foot' AND $convertTo == 'Acre'){
+        $answer = floatval($value) / 43560;
     }
     $result = 'Output: ' . $value . ' ' . $convertFrom . '(s) equals'. ' ' .$answer . ' ' . $convertTo.'(s)';
 }
@@ -110,7 +158,7 @@ if (isset($_POST['convertFrom']) && isset($_POST['convertTo'])) {
         </div>
         
         <div class="col-md-6">
-            <label for="convertTo" class="form-label"><h4>Convert from:</h4></label>
+            <label for="convertTo" class="form-label"><h4>Convert to:</h4></label>
             <select id="convertTo" name="convertTo" class="form-select">
                 <option value="" disabled selected>Select Unit</option>
                 <option value="Square meter">Square meter</option>

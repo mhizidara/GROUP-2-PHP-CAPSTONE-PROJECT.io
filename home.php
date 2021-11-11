@@ -51,7 +51,7 @@
 <body>
     
 <div class="container">
-    <p style="margin-top: -100px;"><strong><h2 class="display-2">Side Hustle Capstone Project</h2></strong></p>
+    <p><strong><h2 class="display-2">Side Hustle Capstone Project</h2></strong></p>
     
     <p><h4 class="display-6">This is a measurement converter built using PHP, Bootstrap and CSS.</h4></p>
     
